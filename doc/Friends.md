@@ -38,8 +38,6 @@ parameter names should be different.
 
 A special friendship is a friendship that depends on the type of the template parameter.
 
-
-
 ```c++
 template <typename T> int myFriendFunction(T);
 template <typename T> class MyFriend;
@@ -52,6 +50,19 @@ class GrantingFriendshipAsClassTemplate{
 ```
 If the name of the template parameter is identical to the name of the template parameter granting the friendship, 
 the friendship will be between instances of the same type.
+
+### Friends to Types
+
+A class template can grant its friendship to a type parameter.
+
+```c++
+template <typename T>
+class Array{
+  friend T; 
+  ...
+};
+Array<Account> myAccount;
+```
 
 
 
