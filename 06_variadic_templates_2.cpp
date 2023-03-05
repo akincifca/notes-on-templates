@@ -1,7 +1,20 @@
+
 // templatePerfectForwarding.cpp
 
 #include <iostream>
 #include <utility>
+
+/*
+ * In the example above, we have created a createT function which invokes the constructor T with the arguments args.
+ * If there is no value passed, it invokes the default constructor. The magic of the factory function createT is that
+ * it can invoke each constructor. Thanks to perfect forwarding, each value can be used such as an lvalue or an rvalue;
+ * thanks to parameter packs, any number of arguments can be used. In the case of MyStruct, a constructor that requires
+ * three arguments is used.
+
+The pattern of the function template createT is exactly the pattern factory functions such as std::make_unique,
+ std::make_shared, std::make_pair, or std::make_tuple use.
+ *
+ */
 
 template<typename T, typename ... Args>
 T createT(Args&& ... args){
