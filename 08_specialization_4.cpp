@@ -30,7 +30,7 @@ void getPrimaryTypeCategory(){
 }
 
 int main(){
-    getPrimaryTypeCategory<int*>();
+    getPrimaryTypeCategory<void>();
 }
 
 /*
