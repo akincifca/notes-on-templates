@@ -21,7 +21,7 @@ int main() {
     std::cout << std::endl;
 
     // share the same ShareMe object
-    auto shareMe(std::make_shared<ShareMe>());
+    std::shared_ptr<ShareMe> shareMe(new ShareMe);
     std::shared_ptr<ShareMe> shareMe1= shareMe->getShared();
 
     // both resources have the same address
@@ -31,5 +31,5 @@ int main() {
     // the use_count is 2
     std::cout << "shareMe.use_count(): "<< shareMe.use_count() << std::endl;
     std::cout << std::endl;
-
+    */
 }
